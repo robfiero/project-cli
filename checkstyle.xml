@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+
+    <!-- Sets the file encoding to UTF-8. -->
+    <property name="charset" value="UTF-8" />
+    
+    <!-- Sets the default severity level for violations. -->
+    <property name="severity" value="warning" />
+    
+    <!-- Configures which file extensions Checkstyle should process. -->
+    <property name="fileExtensions" value="java, properties, xml" />
+
+    <!--
+      Configures the TreeWalker module, which is responsible for
+      processing the Java abstract syntax tree (AST) and running
+      most of the individual checks.
+      See checkstyle.org
+    -->
+    <module name="TreeWalker">
+
+        <!-- Checks for imports -->
+        <!-- See checkstyle.org -->
+        <module name="AvoidStarImport" />
+        <module name="IllegalImport" />
+        <module name="RedundantImport" />
+        <module name="UnusedImports" />
+
+        <!-- Checks for Javadoc comments -->
+        <!-- See checkstyle.org -->
+        <module name="JavadocType" />
+        <module name="JavadocMethod" />
+        
+        <!-- Checks for naming conventions -->
+        <!-- See checkstyle.org -->
+        <module name="ConstantName" />
+        <module name="LocalFinalVariableName" />
+        <module name="LocalVariableName" />
+        <module name="MemberName" />
+        <module name="MethodName" />
+        <module name="PackageName" />
+        <module name="ParameterName" />
+        <module name="StaticVariableName" />
+        <module name="TypeName" />
+
+        <!-- Checks for size violations -->
+        <!-- See checkstyle.org -->
+        <module name="ParameterNumber" />
+        <module name="MethodLength" />
+        
+        <!-- Checks for whitespace issues -->
+        <!-- See https://checkstyle.org/config_whitespace.html -->
+        <module name="GenericWhitespace" />
+        <module name="EmptyForInitializerPad" />
+        <module name="EmptyForIteratorPad" />
+        <module name="MethodParamPad" />
+        <module name="NoWhitespaceAfter" />
+        <module name="NoWhitespaceBefore" />
+        <module name="ParenPad" />
+        <module name="WhitespaceAfter" />
+        <module name="WhitespaceAround" />
+
+    </module>
+
+    <!-- Checks for file tabs, ensuring consistency -->
+    <!-- See checkstyle.org -->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true" />
+    </module>
+    
+    <!-- Checks for line length constraints -->
+    <!-- See checkstyle.org#LineLength -->
+    <module name="LineLength">
+        <property name="max" value="120" />
+        <property name="ignorePattern" value="^package.*|^import.*|href|https?://" />
+    </module>
+
+</module>
