@@ -7,7 +7,7 @@ import org.jline.utils.AttributedStyle;
 
 import java.io.PrintWriter;
 
-public final class TerminalUi {
+public final class TerminalUi implements Ui {
     private final Terminal terminal;
     private final PrintWriter out;
     private final PrintWriter err;
