@@ -1,6 +1,6 @@
 package cli;
 
-import cli.commands.GreetCommand;
+import cli.commands.TestGreetCommand;
 import org.jline.reader.Candidate;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class CompletionTest {
 
     @Test
     void greetCompletesFirstArgNames() {
-        GreetCommand cmd = new GreetCommand();
+        TestGreetCommand cmd = new TestGreetCommand();
         List<Candidate> cands = cmd.completeArgs(List.of(), 0, "R");
 
         assertTrue(
@@ -22,7 +22,7 @@ class CompletionTest {
 
     @Test
     void greetCompletesFlags() {
-        GreetCommand cmd = new GreetCommand();
+        TestGreetCommand cmd = new TestGreetCommand();
         List<Candidate> cands = cmd.completeArgs(List.of("Rob"), 1, "--");
 
         assertTrue(

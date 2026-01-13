@@ -18,4 +18,12 @@ if [ "$#" -gt 0 ]; then
 fi
 
 echo "Running cli.Main..."
-"$MVN" -q -DskipTests exec:java -Dexec.mainClass=cli.Main $EXTRA_ARGS
+echo "Installing parent POM..."
+"$MVN" -q -DskipTests -N install
+
+echo "Building cli-framework..."
+"$MVN" -q -DskipTests -pl cli-framework install
+
+echo "Running cli.Main..."
+"$MVN" -q -DskipTests -pl cli-demo package
+"$MVN" -q -DskipTests -pl cli-demo exec:java $EXTRA_ARGS

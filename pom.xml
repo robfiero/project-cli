@@ -4,26 +4,36 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>your-cli-app</artifactId>
+  <artifactId>project-cli-parent</artifactId>
   <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>cli-framework</module>
+    <module>cli-demo</module>
+  </modules>
 
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
+    <jline.version>3.26.3</jline.version>
+    <junit.jupiter.version>5.10.2</junit.jupiter.version>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.jline</groupId>
-      <artifactId>jline</artifactId>
-      <version>3.26.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>5.10.2</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.jline</groupId>
+        <artifactId>jline</artifactId>
+        <version>${jline.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>${junit.jupiter.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <plugins>
@@ -32,7 +42,7 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.4.0</version>
         <configuration>
-          <configLocation>checkstyle.xml</configLocation>
+          <configLocation>${maven.multiModuleProjectDirectory}/checkstyle.xml</configLocation>
           <consoleOutput>true</consoleOutput>
           <failsOnError>true</failsOnError>
         </configuration>
