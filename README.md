@@ -25,7 +25,8 @@ I definitely learned a number of things from this exercise, not the least of whi
 All in all this probject was a very good learning experience, and I'm sure if I were to do it again I could produce a working product in less time.  I think this too me most of a day, which actually isn't bad seeing as I haven't written a CLI type project in a couple of decades.
 
 ## Here is the output from my code metrics tool, redacted for security.
-Root: /<redacted>/Coding Projects/project-cli/project-cli
+
+```Root: /<redacted>/Coding Projects/project-cli/project-cli
 Profile: all
 Files counted: 30
 Total size: 33.9 KB
@@ -67,5 +68,5 @@ Top 10 longest files (by total lines):
          52 lines  cli-framework/src/main/java/cli/completion/CommandCompleter.java
          45 lines  cli-demo/src/main/java/cli/commands/AddCommand.java
          44 lines  cli-framework/src/test/java/cli/commands/TestSumCommand.java
-
+```
 
